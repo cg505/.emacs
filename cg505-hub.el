@@ -8,6 +8,8 @@
 (global-set-key (kbd "C-M-S-k") 'buf-move-down)
 (global-set-key (kbd "C-M-S-l") 'buf-move-right)
 
+(kotct/ido-set-menu-mode 'vertical)
 
+(kotct/switch-to-theme 'material)
 
 (provide 'cg505-hub)
