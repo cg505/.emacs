@@ -1,3 +1,6 @@
+(kotct/personal-packages material-theme
+                         paredit)
+
 ;; windmove keybindings with shift
 (global-set-key (kbd "C-S-i") 'windmove-up)
 (global-set-key (kbd "C-S-j") 'windmove-left)
@@ -11,5 +14,7 @@
 (kotct/ido-set-menu-mode 'vertical)
 
 (kotct/switch-to-theme 'material)
+
+(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 
 (provide 'cg505-hub)
