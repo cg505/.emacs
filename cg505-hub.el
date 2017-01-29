@@ -1,3 +1,3 @@
 (message "YOU DID IT")
 
-(provide 'cg505)
+(provide 'cg505-hub)
