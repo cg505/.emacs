@@ -17,4 +17,13 @@
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 
+(defun cg505/halve-font-size (arg)
+  "Double font size in selected frame, or with prefix ARG, halve."
+  (interactive "P")
+  (let ((height (face-attribute 'default :height)))
+    (if arg
+        (setf height (* height 2))
+      (setf height (/ height 2)))
+    (set-face-attribute 'default (selected-frame) :height height)))
+
 (provide 'cg505-hub)
