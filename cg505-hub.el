@@ -26,4 +26,6 @@
       (setf height (/ height 2)))
     (set-face-attribute 'default (selected-frame) :height height)))
 
+(electric-indent-mode -1)
+
 (provide 'cg505-hub)
