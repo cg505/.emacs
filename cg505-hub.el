@@ -28,4 +28,15 @@
 
 
 (add-to-list 'default-frame-alist '(alpha . (90 . 80)))
+
+;; make C-j work in *scratch*
+(add-hook 'lisp-interaction-mode-hook
+          (lambda ()
+            (let ((oldmap (cdr (assoc 'paredit-mode minor-mode-map-alist)))
+                  (newmap (make-sparse-keymap)))
+              (set-keymap-parent newmap oldmap)
+              (define-key newmap (kbd "C-j") nil)
+              (make-local-variable 'minor-mode-overriding-map-alist)
+              (push `(paredit-mode . ,newmap) minor-mode-overriding-map-alist))))
+
 (provide 'cg505-hub)
