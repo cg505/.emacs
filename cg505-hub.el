@@ -39,4 +39,6 @@
               (make-local-variable 'minor-mode-overriding-map-alist)
               (push `(paredit-mode . ,newmap) minor-mode-overriding-map-alist))))
 
+(electric-indent-mode -1)
+
 (provide 'cg505-hub)
