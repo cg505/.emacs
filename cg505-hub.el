@@ -26,4 +26,6 @@
       (setf height (/ height 2)))
     (set-face-attribute 'default (selected-frame) :height height)))
 
+
+(add-to-list 'default-frame-alist '(alpha . (90 . 80)))
 (provide 'cg505-hub)
