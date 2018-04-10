@@ -1,6 +1,8 @@
 (kotct/personal-packages material-theme
                          paredit)
 
+(setf kotct/dev-mode t)
+
 ;; windmove keybindings with shift
 (global-set-key (kbd "C-S-i") 'windmove-up)
 (global-set-key (kbd "C-S-j") 'windmove-left)
@@ -40,5 +42,10 @@
               (push `(paredit-mode . ,newmap) minor-mode-overriding-map-alist))))
 
 (electric-indent-mode -1)
+
+(setf delete-active-region nil)
+
+;; since fish is not POSIX, some stuff breaks
+(setf shell-file-name "/bin/zsh")
 
 (provide 'cg505-hub)
