@@ -19,6 +19,9 @@
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 
+(with-eval-after-load 'paredit
+  (define-key paredit-mode-map (kbd "C-M-l") #'paredit-recenter-on-sexp))
+
 (defun cg505/halve-font-size (arg)
   "Halve font size in selected frame, or with prefix ARG, double."
   (interactive "P")
@@ -47,5 +50,7 @@
 
 ;; since fish is not POSIX, some stuff breaks
 (setf shell-file-name "/bin/zsh")
+
+(setf ivy-wrap t)
 
 (provide 'cg505-hub)
